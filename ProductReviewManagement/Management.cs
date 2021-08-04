@@ -33,5 +33,15 @@ namespace ProductReviewManagement
                 Console.WriteLine(list.ToString());
             }
         }
+
+        // Method to Count Reviews By Product ID..................
+        public void RetrieveCountOfRecords(List<ProductReview> listProductReview)
+        {
+            var recordedData = listProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + " " + list.Count);
+            }
+        }
     }
 }
