@@ -28,6 +28,9 @@ namespace ProductReviewManagement
             Management management = new Management();
             //  top 3 rated reviews Method.................
             management.TopRecords(productReviewList);
+            Console.WriteLine("------------------------------------------------------------------");
+            // Products with given rating and id...............
+            management.SelectedRecords(productReviewList);
         }
     }
 }
