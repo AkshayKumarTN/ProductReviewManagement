@@ -32,8 +32,12 @@ namespace ProductReviewManagement
             // Products with given rating and id...............
             management.SelectedRecords(productReviewList);
             Console.WriteLine("------------------------------------------------------------------");
-            // ount Reviews By Product ID....................
+            // Count Reviews By Product ID....................
             management.RetrieveCountOfRecords(productReviewList);
+            Console.WriteLine("------------------------------------------------------------------");
+            // Retrieve Only ProductID and Reviews...............
+            management.RetrieveProductIDAndReviews(productReviewList);
+
         }
     }
 }
