@@ -37,7 +37,9 @@ namespace ProductReviewManagement
             Console.WriteLine("------------------------------------------------------------------");
             // Retrieve Only ProductID and Reviews...............
             management.RetrieveProductIDAndReviews(productReviewList);
-
+            Console.WriteLine("------------------------------------------------------------------");
+            // Skip Top 5 Reviews and display the remaining............
+            management.SkipTop5Records(productReviewList);
         }
     }
 }

@@ -54,5 +54,16 @@ namespace ProductReviewManagement
                 Console.WriteLine(list.ProductID + " " + list.Review);
             }
         }
+
+        // Method to Skip Top 5 Reviews and display the remaining.............
+        public void SkipTop5Records(List<ProductReview> listProductReview)
+        {
+            var recordedData = (from productReview in listProductReview
+                                select productReview).Skip(5);
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ToString());
+            }
+        }
     }
 }
