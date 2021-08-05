@@ -9,6 +9,29 @@ namespace ProductReviewManagement
     class Management
     {
         public readonly DataTable dataTable = new DataTable();
+        public Management()
+        {
+            // Creating Columns of the DataTable.................
+            dataTable.Columns.Add("ProductID");
+            dataTable.Columns.Add("UserID");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike");
+
+            // Inserting Data into the Table.....................
+            dataTable.Rows.Add(1, 1, 2d, "Good", true);
+            dataTable.Rows.Add(2, 1, 4d, "Good", true);
+            dataTable.Rows.Add(3, 1, 5d, "Good", true);
+            dataTable.Rows.Add(4, 1, 6d, "Good", false);
+            dataTable.Rows.Add(5, 1, 2d, "nice", true);
+            dataTable.Rows.Add(6, 1, 1d, "bas", true);
+            dataTable.Rows.Add(8, 1, 1d, "Good", false);
+            dataTable.Rows.Add(8, 1, 9d, "nice", true);
+            dataTable.Rows.Add(2, 1, 10d, "nice", true);
+            dataTable.Rows.Add(10, 1, 8d, "nice", true);
+            dataTable.Rows.Add(11, 1, 3d, "nice", true);
+        }
+
         // Method to retrieve top 3 rated reviews............
         public void TopRecords(List<ProductReview> listProductReview)
         {
