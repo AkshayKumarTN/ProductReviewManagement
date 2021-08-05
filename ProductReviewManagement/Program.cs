@@ -43,6 +43,9 @@ namespace ProductReviewManagement
             Console.WriteLine("------------------------------------------------------------------");
             // Retrieve ProductId and Reviews using LINQ select............
             management.SelectProductIDAndReviews(productReviewList);
+            Console.WriteLine("------------------------------------------------------------------");
+            // Retrieve records where isLike is true in data table.................
+            management.RetrieveTrueIsLike();
         }
     }
 }
