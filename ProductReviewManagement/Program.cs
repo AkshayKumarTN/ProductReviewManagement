@@ -49,6 +49,10 @@ namespace ProductReviewManagement
             Console.WriteLine("------------------------------------------------------------------");
             // Get Average Rating of each ProductID in DataTable....................
             management.AverageRatingByProductID();
+            Console.WriteLine("------------------------------------------------------------------");
+            // Retrieve All Reviews Having nice in them........................
+            management.NiceReviews();
+
 
         }
     }

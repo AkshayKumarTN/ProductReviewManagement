@@ -124,5 +124,20 @@ namespace ProductReviewManagement
                 Console.WriteLine(dataItem.ProductID + " " + dataItem.Average);
             }
         }
+
+        // Method to Retrieve All Reviews Having nice in them.................
+        public void NiceReviews()
+        {
+            var Data = dataTable.AsEnumerable()
+                        .Where(x => x.Field<string>("Review").Contains("Nice", StringComparison.OrdinalIgnoreCase));
+            foreach (var dataItem in Data)
+            {
+                foreach (var item in dataItem.ItemArray)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
