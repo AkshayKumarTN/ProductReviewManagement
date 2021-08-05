@@ -31,6 +31,11 @@ namespace ProductReviewManagement
             dataTable.Rows.Add(2, 1, 10d, "nice", true);
             dataTable.Rows.Add(10, 1, 8d, "nice", true);
             dataTable.Rows.Add(11, 1, 3d, "nice", true);
+            dataTable.Rows.Add(12, 10, 5d, "Okay", true);
+            dataTable.Rows.Add(13, 10, 8d, "Nice", true);
+            dataTable.Rows.Add(11, 10, 2d, "Bad", false);
+            dataTable.Rows.Add(15, 10, 9d, "Nice", true);
+            dataTable.Rows.Add(1, 10, 7d, "Good", true);
         }
 
         // Method to retrieve top 3 rated reviews............
@@ -130,6 +135,22 @@ namespace ProductReviewManagement
         {
             var Data = dataTable.AsEnumerable()
                         .Where(x => x.Field<string>("Review").Contains("Nice", StringComparison.OrdinalIgnoreCase));
+            foreach (var dataItem in Data)
+            {
+                foreach (var item in dataItem.ItemArray)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        // Method to Order Reviews By Rating where UserID is 10.................
+        public void OrderByRatingOnCondition()
+        {
+            var Data = dataTable.AsEnumerable()
+                        .Where(x => x.Field<int>("UserID") == 10)
+                        .OrderBy(x => x.Field<double>("Rating"));
             foreach (var dataItem in Data)
             {
                 foreach (var item in dataItem.ItemArray)
