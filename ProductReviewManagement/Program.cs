@@ -46,6 +46,10 @@ namespace ProductReviewManagement
             Console.WriteLine("------------------------------------------------------------------");
             // Retrieve records where isLike is true in data table.................
             management.RetrieveTrueIsLike();
+            Console.WriteLine("------------------------------------------------------------------");
+            // Get Average Rating of each ProductID in DataTable....................
+            management.AverageRatingByProductID();
+
         }
     }
 }
