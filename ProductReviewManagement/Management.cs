@@ -65,5 +65,15 @@ namespace ProductReviewManagement
                 Console.WriteLine(list.ToString());
             }
         }
+
+        // Method to Retrieve ProductId and Reviews using LINQ select..............
+        public void SelectProductIDAndReviews(List<ProductReview> listProductReview)
+        {
+            var recordedData = listProductReview.Select(x => new { x.ProductID, x.Review });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + " " + list.Review);
+            }
+        }
     }
 }

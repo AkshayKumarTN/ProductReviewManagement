@@ -40,6 +40,9 @@ namespace ProductReviewManagement
             Console.WriteLine("------------------------------------------------------------------");
             // Skip Top 5 Reviews and display the remaining............
             management.SkipTop5Records(productReviewList);
+            Console.WriteLine("------------------------------------------------------------------");
+            // Retrieve ProductId and Reviews using LINQ select............
+            management.SelectProductIDAndReviews(productReviewList);
         }
     }
 }
